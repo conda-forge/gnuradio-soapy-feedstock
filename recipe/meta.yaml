@@ -24,7 +24,7 @@ requirements:
     - pkg-config  # [not win]
   host:
     - boost-cpp
-    - gnuradio-core {{ 'gnuradio-core' }}
+    - gnuradio-core {{ gnuradio_core }}
     - pip  # [win]
     - python
     - soapysdr
