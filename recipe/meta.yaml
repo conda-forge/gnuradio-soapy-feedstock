@@ -23,6 +23,7 @@ requirements:
     - cmake
     - make  # [not win]
     - ninja  # [win]
+    - patch  # [osx]
     - pkg-config  # [not win]
   host:
     - boost-cpp
