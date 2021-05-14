@@ -10,7 +10,7 @@ source:
   sha256: 03994d735e332c985a40924a08ab7ae78ebc54a37cb60ae26c2d4c8df1a2203b
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage('gnuradio-soapy', max_pin='x.x') }}
 
@@ -22,10 +22,10 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
     - pkg-config  # [not win]
+    - swig
     # cross-compilation requirements
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-    - pybind11                            # [build_platform != target_platform]
     - numpy                               # [build_platform != target_platform]
   host:
     - boost-cpp
@@ -34,7 +34,6 @@ requirements:
     - python
     - numpy
     - soapysdr
-    - swig
     # pulled in by gnuradio-core and linked against, so include explicitly
     - log4cpp
   run:
