@@ -36,6 +36,7 @@ requirements:
     - pip  # [win]
     - pybind11
     - python
+    - numpy
     - soapysdr
   run:
     - boost-cpp
