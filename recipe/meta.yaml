@@ -12,7 +12,7 @@ source:
     - 0001-Port-to-maint-3.9-and-higher.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('gnuradio-soapy', max_pin='x.x') }}
 
