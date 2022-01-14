@@ -10,7 +10,7 @@ source:
   sha256: 03994d735e332c985a40924a08ab7ae78ebc54a37cb60ae26c2d4c8df1a2203b
 
 build:
-  number: 5
+  number: 6
   run_exports:
     - {{ pin_subpackage('gnuradio-soapy', max_pin='x.x') }}
 
