@@ -8,8 +8,6 @@ package:
 source:
   url: https://gitlab.com/librespacefoundation/gr-soapy/-/archive/v{{ version }}/gr-soapy-v{{ version }}.tar.gz
   sha256: 03994d735e332c985a40924a08ab7ae78ebc54a37cb60ae26c2d4c8df1a2203b
-  patches:
-    - 0001-Port-to-maint-3.9-and-higher.patch
 
 build:
   number: 6
@@ -23,24 +21,21 @@ requirements:
     - cmake
     - make  # [not win]
     - ninja  # [win]
-    - patch  # [osx]
     - pkg-config  # [not win]
-    # cross-compilation requirements
-    - python                              # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-    - pybind11                            # [build_platform != target_platform]
-    - numpy                               # [build_platform != target_platform]
   host:
     - boost-cpp
     - gnuradio-core
     - pip  # [win]
-    - pybind11
     - python
-    - numpy
     - soapysdr
+    - swig
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
   run:
     - boost-cpp
     - python
+    # pulled in by gnuradio-core and linked against, so include explicitly
+    - log4cpp
 
 test:
   commands:
